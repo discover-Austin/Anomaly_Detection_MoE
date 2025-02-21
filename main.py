@@ -29,7 +29,7 @@ def generate_synthetic_timeseries(n_samples: int, input_length: int):
 
 def main():
     n_samples = 1000
-    input_length = 20  # use past 20 time steps to forecast the next one
+    input_length = 20
     sequences, targets, anomaly_indicator = generate_synthetic_timeseries(n_samples, input_length)
     dataset = TensorDataset(sequences, targets)
     data_loader = DataLoader(dataset, batch_size=32, shuffle=True)
